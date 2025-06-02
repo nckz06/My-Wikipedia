@@ -24,7 +24,7 @@
         <div class="search-content">
             <div class="search">
                 <span class="material-symbols-outlined">search</span>
-                <input type="search" name="" id="" placeholder="Pesquisar na OP">
+                <input type="search" name="" id="busca" placeholder="Pesquisar na OP">
             </div>
             <button>Pesquisar</button>
         </div>
@@ -663,5 +663,19 @@
         </div>
 
     </footer>
+
+    <script>
+        var searchField = document.getElementById("busca");
+        var descriptionObject = document.getElementById('descricao')
+        var textToSearch = descriptionObject.innerHTML
+
+        function realizaBusca(busca) {
+            const regex = new RegExp(`(${busca})(?!(.(?!<mark))*</mark>)+`, 'ig');
+            const ocurrences = textToSearch.match(regex)
+            descriptionObject.innerHTML = textToSearch.replace(regex, `<mark>${busca}</mark>`)
+        }
+
+        searchField.addEventListener('keyup', (e) => realizaBusca(e.target.value))
+    </script>
 </body>
 </html>

@@ -210,7 +210,7 @@ a:hover {
     display: grid;
     gap: 3rem;
     grid-template-areas: "sidebar main anchors";
-    grid-template-columns: minmax(0,10rem) minmax(0,2.5fr) minmax(0,10rem);
+    grid-template-columns: minmax(0,15rem) minmax(0,2.5fr) minmax(0,10rem);
     padding-left: 1rem;
     padding-right: 1rem;
 }
@@ -222,17 +222,14 @@ a:hover {
 }
 
 .sidebar {
-    left: 1rem;
     border-right: solid 1px #cdcdcd;
     font-size: 15px;
-}
-
-.sidebar section {
-    left: 6.5rem;
+    padding-right: 1.5rem;
 }
 
 .sidebar section, .anchors nav {
-    position: fixed;
+    position: sticky;
+    top: 25px;
 }
 
 footer {
