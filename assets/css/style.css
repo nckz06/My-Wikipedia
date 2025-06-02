@@ -229,7 +229,7 @@ a:hover {
 
 .sidebar section, .anchors nav {
     position: sticky;
-    top: 25px;
+    top: 30px;
 }
 
 footer {
